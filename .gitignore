@@ -1,0 +1,11 @@
+/.vs/*
+/*.VC.db
+/packages/*
+/bin/*
+/lib/*
+/obj/*
+*.vcxproj.user
+/*.ncb
+/*.suo
+*.user
+*packages
