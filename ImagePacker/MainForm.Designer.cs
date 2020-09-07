@@ -77,7 +77,7 @@
             this.trim_checkBox.Location = new System.Drawing.Point(728, 23);
             this.trim_checkBox.Name = "trim_checkBox";
             this.trim_checkBox.Size = new System.Drawing.Size(155, 17);
-            this.trim_checkBox.TabIndex = 5;
+            this.trim_checkBox.TabIndex = 3;
             this.trim_checkBox.Text = "Cut off all transparent pixels";
             this.trim_checkBox.UseVisualStyleBackColor = true;
             this.trim_checkBox.CheckedChanged += new System.EventHandler(this.CheckBox1_CheckedChanged);
@@ -115,7 +115,7 @@
             this.open_button.Location = new System.Drawing.Point(819, 20);
             this.open_button.Name = "open_button";
             this.open_button.Size = new System.Drawing.Size(64, 20);
-            this.open_button.TabIndex = 2;
+            this.open_button.TabIndex = 0;
             this.open_button.Text = "Open...";
             this.open_button.UseVisualStyleBackColor = true;
             this.open_button.Click += new System.EventHandler(this.Open_button_Click);
@@ -161,8 +161,8 @@
             this.atlasfile_textBox.Location = new System.Drawing.Point(104, 20);
             this.atlasfile_textBox.Name = "atlasfile_textBox";
             this.atlasfile_textBox.Size = new System.Drawing.Size(618, 20);
-            this.atlasfile_textBox.TabIndex = 7;
-            this.atlasfile_textBox.Text = "atlas";
+            this.atlasfile_textBox.TabIndex = 2;
+            this.atlasfile_textBox.Text = "buttons";
             // 
             // label3
             // 
@@ -201,10 +201,11 @@
             // generate_button
             // 
             this.generate_button.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.generate_button.Enabled = false;
             this.generate_button.Location = new System.Drawing.Point(10, 23);
             this.generate_button.Name = "generate_button";
             this.generate_button.Size = new System.Drawing.Size(876, 28);
-            this.generate_button.TabIndex = 0;
+            this.generate_button.TabIndex = 4;
             this.generate_button.Text = "Generate";
             this.generate_button.UseVisualStyleBackColor = true;
             this.generate_button.Click += new System.EventHandler(this.Generate_button_Click);
@@ -248,10 +249,11 @@
             // 
             this.save_button.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.save_button.Enabled = false;
             this.save_button.Location = new System.Drawing.Point(193, 364);
             this.save_button.Name = "save_button";
             this.save_button.Size = new System.Drawing.Size(64, 20);
-            this.save_button.TabIndex = 13;
+            this.save_button.TabIndex = 5;
             this.save_button.Text = "Save as...";
             this.save_button.UseVisualStyleBackColor = true;
             this.save_button.Click += new System.EventHandler(this.Button1_Click);
@@ -314,6 +316,7 @@
             this.splitContainer1.Size = new System.Drawing.Size(896, 390);
             this.splitContainer1.SplitterDistance = 445;
             this.splitContainer1.TabIndex = 0;
+            this.splitContainer1.TabStop = false;
             // 
             // splitContainer2
             // 
@@ -332,6 +335,7 @@
             this.splitContainer2.Size = new System.Drawing.Size(445, 390);
             this.splitContainer2.SplitterDistance = 133;
             this.splitContainer2.TabIndex = 0;
+            this.splitContainer2.TabStop = false;
             // 
             // MainForm
             // 
