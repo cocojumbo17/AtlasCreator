@@ -6,7 +6,8 @@
 namespace rectpack2D {
 	enum class callback_result {
 		ABORT_PACKING,
-		CONTINUE_PACKING
+		CONTINUE_PACKING,
+		CANCEL_PACKING
 	};
 
 	template <class T>
@@ -258,9 +259,13 @@ namespace rectpack2D {
 					}
 				}
 				else {
-					if (callback_result::ABORT_PACKING == input.handle_unsuccessful_insertion(rect)) {
+					if (callback_result::CANCEL_PACKING == input.handle_unsuccessful_insertion(rect)) {
+						return rect_wh(0, 0);
+					}
+					else if (callback_result::ABORT_PACKING == input.handle_unsuccessful_insertion(rect)) {
 						break;
 					}
+					
 				}
 			}
 

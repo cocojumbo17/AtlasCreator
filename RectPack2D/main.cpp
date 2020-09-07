@@ -77,7 +77,7 @@ int main(int argc, char* argv[]) {
 	};
 
 	auto report_unsuccessful = [](rect_type&) {
-		return callback_result::ABORT_PACKING;
+		return callback_result::CANCEL_PACKING;
 	};
 
 	/*
