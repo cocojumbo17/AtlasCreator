@@ -20,11 +20,18 @@ namespace ImagePacker
             InitializeComponent();
             m_images = new List<ImageInfo>();
             Cleanup();
+            if (!File.Exists("RectPack2D.exe"))
+            {
+                open_button.Enabled = false;
+                folder_textBox.Enabled = false;
+                Log("You need to have RectPack2D.exe in folder with this application", true);
+            }
         }
 
         private void Cleanup()
         {
             generate_button.Enabled = false;
+            save_button.Enabled = false;
             log_textBox.Clear();
             gmm_textBox.Clear();
             m_images.Clear();
@@ -49,7 +56,11 @@ namespace ImagePacker
             if (AnalizeFolder())
             {
                 if (ReadImages())
+                {
+                    Log("Images are loaded. Press \"Generate\" button to create atlas");
                     generate_button.Enabled = true;
+                    generate_button.Focus();
+                }
                 else
                     Log("Cannot read any file", true);
             }
@@ -106,6 +117,9 @@ namespace ImagePacker
             {
                 CreateAtlasImage(atlas_size);
                 CreateAtlasGmm();
+                save_button.Enabled = true;
+                save_button.Focus();
+                Log("Atlas is created. Press button \"Save as...\" to save it.");
             }
         }
 
@@ -119,7 +133,7 @@ namespace ImagePacker
                 txt_writer.WriteLine(info.ActualRect.Height);
             }
             txt_writer.Close();
-            Log("File with sizes of rectangles is created");
+            Log("Data file for RectPack2D.exe is created");
         }
 
         private Size GetPositions(string filename_with_rectangles)
