@@ -167,10 +167,13 @@ namespace ImagePacker
             if(m_atlas != null)
                 m_atlas.Dispose();
             m_atlas = new Bitmap(atlas_size.Width, atlas_size.Height);
-            m_atlas.SetResolution(m_images[0].Img.HorizontalResolution, m_images[0].Img.VerticalResolution);
+            float hor_resolution = m_images[0].Img.HorizontalResolution;
+            float ver_resolution = m_images[0].Img.VerticalResolution;
+            m_atlas.SetResolution(hor_resolution, ver_resolution);
             Graphics gr = Graphics.FromImage(m_atlas);
             foreach (ImageInfo info in m_images)
             {
+                info.Img.SetResolution(hor_resolution, ver_resolution);
                 gr.DrawImage(info.Img, info.Rect.X, info.Rect.Y, info.ActualRect, GraphicsUnit.Pixel);
             }
             gr.Dispose();

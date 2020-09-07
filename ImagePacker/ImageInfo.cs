@@ -32,7 +32,7 @@ namespace ImagePacker
         }
         public Rectangle Rect { get; set; }
         public Rectangle ActualRect { get; private set; }
-        public Image Img { get => m_bmp; }
+        public Bitmap Img { get => m_bmp; }
 
         private void CalculateActualRect()
         {
