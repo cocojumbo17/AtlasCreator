@@ -31,4 +31,5 @@ build:
         expire_in: 1 day
         paths: 
           - bin\*\*.exe 
+          - Examples\*\*.*
 
